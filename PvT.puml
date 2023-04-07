@@ -1,0 +1,169 @@
+@startuml
+title Protoss vs Terran scouting chart (version 0.1)
+start
+:Send initial scouting Probe;
+if (Are there Buildings in the Terran's Base?) then (yes)
+    :Continue with normal build;
+    :Shade forward first Adept to scout;
+    if (Is there a second Command Center?) then (yes)
+        :Continue with normal build;
+    else (no)
+        repeat
+            :Stay with Adept in front of Natural to figure out what he is doing;
+            if (Are there units walking out of his base?) then (yes)
+                if (Is it Hellions?) then (yes)
+                    :Wall of your natural;
+                else (no)
+                    :Get units and a Shield Battery at your natural;
+                endif
+            else (no)
+            endif
+        repeatwhile (Repeat until units walk out or you have enough informations)
+    endif
+else (no)
+    if (Is there any gas taken?) then (yes)
+        :You play vs. any Gas based some proxy (Reaper, Marauder, Factory)
+        - check with a probe from your main if you can find the proxy, to verify what it is;
+        if (Is it proxy factory?) then (yes)
+            :*I AM NOT EXACTLY SURE WHAT TO DO IN THIS CASE*
+            The following is just a suggestion:
+            You can go 3 Gate + Tech on one base to defend
+            I would suggest 3 Gate Phoenix as this seems to deal
+            quite well with anything from 1 base factory / starport.;
+        else (no)
+            :You play vs. proxy Reaper or Marauder
+            Defend like this:
+            - 1 Base
+            - 2 Gates
+            - Adepts
+            - Shield Batteries;
+        endif
+        :After defending, get a Nexus in your natural as usual;
+    else (no)
+        :You play vs. proxy rax (marines)
+        Defend like this:
+        - 1 Base
+        - 2 Gates
+        - Stalkers
+        - Shield Batteries;
+    endif
+endif
+:Send any "air" scout your build allows (Hallucinated Pheonix, Observer or Stargate unit);
+if (Is he still on one base?) then (yes)
+    if (Is he only having Barracks?) then (yes)
+        :You play vs. 3 Rax (Marines / Marauder with Stim)
+        Defend like this:
+        - cut probe production (approximately 1 - 1,5 base saturaion)
+        - add 2-4 Shield Batteries on natural
+        - 3 Gateways
+        - build as many Units as you can;
+    else (no)
+        :You play vs. 1/1/1 (possibly Marines, Mines, Tanks, Banshees, Cyclones)
+        Defend like this:
+        - cut probe production (approximately 1,5 base saturation)
+        - 3-5 Gateways (depending on Probe count)
+        - tech building (Robo, Stargate, Twilight)
+        - something vs. cloak Banshees (Observer, Oracle, Cannon)
+        - build as many units as you can (not too many Shield Batteries as they wont help vs. Tanks);
+    endif
+    :After defending you can continue your normal build.
+    You should be really ahead now and may be able to counterattack.;
+else (no)
+    :Check whether he plays Bio or Mech;
+    note right
+        Bio / Mech decision cheat sheet
+        Usually Mech play can be identified just by
+        the missing Bio Indications as Terrans want to
+        get their Bio upgrades early on (Stim, Combat Shield, etc.)
+
+        The following Indications suggest Bio play:
+        - Marines with Combat Shields
+        - multiple Barracks
+        - researching Tech Lab (on Barracks)
+        - multiple Engineering Bays
+        - Marauders
+
+        The following Indications suggest Mech play:
+        - multiple Factories
+        - Hellions
+        - lack of Bio Units
+        - early Armory
+        - researching Tech Lab (on Factory)
+        - early 4th Gas
+    end note
+    if (Is he playing Bio or Mech?) then (Bio)
+        :Check what are you playing against;
+        note left
+            There are a couple of different Bio openers a Terran can do.
+            I will try to cover the most popular ones.
+        end note
+        switch (What are you seeing?)
+        case (1/1/1)
+            if (Do you see a fusion core?)
+                :You are facing a Battle Cruiser opening.
+                A Battle Cruiser will warp in one of your mineral lines at ~5:30.
+
+                Defend like this:
+                - 1 Shield Battery in every mineral line
+                - 5 Stalkers or 1 Voidray in every mineral line (Voidray only if you opened Stargate);
+            else (no)
+                :You are probably facing a Widow Mine drop or cloaked Banshees.
+                Either one will hit your base at ~4:30
+
+                Defend like this:
+                - 1 Shield Battery in every mineral line
+                - Stalkers or Phoenix in position (Phoenix only if you opened Stargate)
+                - Have detection ready (Observer, Cannon or Oracle);
+            endif
+            :Keep in mind, that 1/1/1 builds are greedy tech builds that are not aiming to kill you,
+            but to keep you at home. The Terran can prepare a follow up push or a relatively fast 3rd CC 
+            behind the 1/1/1 harass.
+
+            You need to continously scout after the harass to figure out what happens next.;
+        case (3 Rax)
+            :You are facing Bio aggression.
+            With a 3 Rax build the Terran delays tech to get Bio upgrades and
+            Bio units quickly. This will almost always result in some kind of
+            Bio aggression with upgrades (Stim, Combat Shields, Concusive Shells).
+
+            What exactly the Terran will do is hard to tell and will require
+            constant scouting. If he adds Marauders, he will research Concusive Shells 
+            and therefore you should not try to delay his attack, if you are 
+            playing Blink Stalkers.
+
+            The exact timing of his attack may vary depending on his exact build but
+            you can roughly expect the attack to come between ~5:00 if only with Marines and ~7:00 if they waited for Medivacs.
+
+            Depending on your build you can be quite greedy and get away with it. For example with an early 3rd Base
+            but you will need to scout constantly to see when he moves out.
+
+            To defend this, you need to have enough units, Shield Batteries and Force Fields ready.;
+        case (2 Barracks, 1 Factory, 1 Starport and a bunch of marines)
+            :You are facing a 16 Marine Stim drop.
+            This is a timing with 16 Stim Marines and 2 Medivacs.
+            It will hit your base at ~5:00.
+            
+            Find out where he will strike and have units in position.
+            This attack can be quite potent if you he catches you offguard 
+            but is easily deflected if you are in position.;
+        case (Fast 3rd Command Center)
+            :You are facing a very fast 3rd CC and this means
+            that you are not in immediate danger but will fall
+            behind if you do not react.
+
+            Your options are the following:
+            - be greedy urself (fast 3rd and tech / upgrades)
+            - get 8-10 gateways and allin;
+        endswitch
+    else (Mech)
+        :Todo;
+        note right
+            Unfortunately I do not know how to identify Mech playstyles all that well
+            but usually you just want to play Chargelot Archon and add Immortals when they add Thor's.
+            You might want to adapt against some uniqle playstyles like mass Banshee or mass Battle Cruiser
+            but in general, this will deal pretty well with anything.
+            
+            Keep in mind that against Cyclone Hellion you want to add 2-3 Colossus or Storm.
+        end note
+    endif
+endif
