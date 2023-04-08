@@ -1,5 +1,8 @@
 @startuml
-title Protoss vs Terran scouting flowchart (version 0.2)
+!theme sketchy
+skinparam defaultFontName Calibri
+skinparam handwritten true
+title Protoss vs Terran scouting flowchart (version 0.3)
 start
 :Send initial scouting Probe;
 if (Are there Buildings in the Terran's Base?) then (yes)
@@ -114,9 +117,9 @@ else (no)
                 Either one will hit your base at ~4:30
 
                 Defend like this:
-                - 1 Shield Battery in every mineral line
                 - 3-4 Stalkers or Phoenix in position (Phoenix only if you opened Stargate)
-                - Have detection ready (Observer, Cannon or Oracle);
+                - Have detection ready (Observer, Cannon or Oracle)
+                - If you confirmed its Banshee, you can add a Shield Battery in each mineral line;
             endif
             :Keep in mind, that 1/1/1 builds are greedy tech builds that are not aiming to kill you,
             but to keep you at home. The Terran can prepare a follow up push or a relatively fast 3rd CC 
