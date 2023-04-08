@@ -2,6 +2,11 @@
 !theme sketchy
 skinparam defaultFontName Calibri
 skinparam handwritten true
+skinparam backgroundColor white
+skinparam DefaultFontColor white
+skinparam shadowing true
+skinparam ArrowFontColor black
+skinparam ArrowFontSize 20
 title Protoss vs Terran scouting flowchart (version 0.3)
 start
 :Send initial scouting Probe;
