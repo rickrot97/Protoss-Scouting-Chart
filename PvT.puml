@@ -1,5 +1,5 @@
 @startuml
-title Protoss vs Terran scouting chart (version 0.2)
+title Protoss vs Terran scouting flowchart (version 0.2)
 start
 :Send initial scouting Probe;
 if (Are there Buildings in the Terran's Base?) then (yes)
