@@ -1,5 +1,5 @@
 @startuml
-title Protoss vs Terran scouting chart (version 0.1)
+title Protoss vs Terran scouting chart (version 0.2)
 start
 :Send initial scouting Probe;
 if (Are there Buildings in the Terran's Base?) then (yes)
@@ -22,14 +22,17 @@ if (Are there Buildings in the Terran's Base?) then (yes)
     endif
 else (no)
     if (Is there any gas taken?) then (yes)
-        :You play vs. any Gas based some proxy (Reaper, Marauder, Factory)
+        :You play vs. some kind of Gas based proxy (Reaper, Marauder, Factory)
         - check with a probe from your main if you can find the proxy, to verify what it is;
         if (Is it proxy factory?) then (yes)
-            :*I AM NOT EXACTLY SURE WHAT TO DO IN THIS CASE*
-            The following is just a suggestion:
-            You can go 3 Gate + Tech on one base to defend
+            :You can go 3 Gate + Tech on one base to defend
             I would suggest 3 Gate Phoenix as this seems to deal
             quite well with anything from 1 base factory / starport.;
+            note left
+                I am not exactly sure what to do in this case and
+                the explained response here is just a suggestion
+                that worked for me quite well in the past.
+            end note
         else (no)
             :You play vs. proxy Reaper or Marauder
             Defend like this:
@@ -99,20 +102,20 @@ else (no)
         end note
         switch (What are you seeing?)
         case (1/1/1)
-            if (Do you see a fusion core?)
+            if (Do you see a fusion core?) then (yes)
                 :You are facing a Battle Cruiser opening.
-                A Battle Cruiser will warp in one of your mineral lines at ~5:30.
+                A Battle Cruiser will warpin in one of your mineral lines at ~5:30.
 
                 Defend like this:
                 - 1 Shield Battery in every mineral line
-                - 5 Stalkers or 1 Voidray in every mineral line (Voidray only if you opened Stargate);
+                - 5 Stalkers in every mineral line;
             else (no)
                 :You are probably facing a Widow Mine drop or cloaked Banshees.
                 Either one will hit your base at ~4:30
 
                 Defend like this:
                 - 1 Shield Battery in every mineral line
-                - Stalkers or Phoenix in position (Phoenix only if you opened Stargate)
+                - 3-4 Stalkers or Phoenix in position (Phoenix only if you opened Stargate)
                 - Have detection ready (Observer, Cannon or Oracle);
             endif
             :Keep in mind, that 1/1/1 builds are greedy tech builds that are not aiming to kill you,
@@ -127,9 +130,9 @@ else (no)
             Bio aggression with upgrades (Stim, Combat Shields, Concusive Shells).
 
             What exactly the Terran will do is hard to tell and will require
-            constant scouting. If he adds Marauders, he will research Concusive Shells 
-            and therefore you should not try to delay his attack, if you are 
-            playing Blink Stalkers.
+            constant scouting. If he adds Marauders, he will research Concusive Shells.
+            If you are playing Blink Stalkers you would normally try and pressure with them to
+            delay the attack. Because of Concusive Shells you should absolutely avoid that in this case.
 
             The exact timing of his attack may vary depending on his exact build but
             you can roughly expect the attack to come between ~5:00 if only with Marines and ~7:00 if they waited for Medivacs.
@@ -144,14 +147,14 @@ else (no)
             It will hit your base at ~5:00.
             
             Find out where he will strike and have units in position.
-            This attack can be quite potent if you he catches you offguard 
+            This attack can be quite potent if he catches you offguard 
             but is easily deflected if you are in position.;
         case (Fast 3rd Command Center)
             :You are facing a very fast 3rd CC and this means
             that you are not in immediate danger but will fall
             behind if you do not react.
 
-            Your options are the following:
+            Your options are one of the following:
             - be greedy urself (fast 3rd and tech / upgrades)
             - get 8-10 gateways and allin;
         endswitch
