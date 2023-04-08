@@ -7,7 +7,8 @@ skinparam DefaultFontColor white
 skinparam shadowing true
 skinparam ArrowFontColor black
 skinparam ArrowFontSize 20
-title Protoss vs Terran scouting flowchart (version 0.3)
+skinparam TitleFontColor black
+title Protoss vs Terran scouting flowchart (version 0.5)
 start
 :Send initial scouting Probe;
 if (Are there Buildings in the Terran's Base?) then (yes)
