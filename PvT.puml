@@ -38,12 +38,9 @@ if (Is there a Barracks in the Terran's Base?) then (yes)
                 and micro have to make up for it.
             end note
         else (2 Gas)
-            :Scout for proxies;
-            note right
-                :You play vs. some kind of one base aggression.
-                Potentially proxy Factory or proxy Reaper but 
-                might aswell be a 1/1/1.
-            end note
+            You play vs. some kind of one base aggression.
+            Potentially proxy Factory or proxy Reaper but 
+            might aswell be a 1/1/1.
         endif
     endif
 else (no)
