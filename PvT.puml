@@ -8,11 +8,130 @@ skinparam shadowing true
 skinparam ArrowFontColor black
 skinparam ArrowFontSize 20
 skinparam TitleFontColor black
-title Protoss vs Terran scouting flowchart (version 0.5)
+title Protoss vs Terran scouting flowchart (version 0.6)
 start
-:Send initial scouting Probe;
-if (Are there Buildings in the Terran's Base?) then (yes)
-    :Continue with normal build;
+:Send initial scouting Probe (after 16 Gateway);
+if (Is there a Barracks in the Terran's Base?) then (yes)
+    if (Is the base already walled off) then (yes)
+        :Get an early Shield Battery at your natural
+        and keep scouting his natural so you can see
+        when units are moving out or he expands.;
+        note left
+            Getting the Shield Battery early
+            will not make you fall behind, in
+            case he just expands.
+            He invested money into a fast
+            2nd Depot which delays his CC.
+        end note
+        :Send a Probe from your main to scout for proxies.;
+    else (no)
+        if (How many Gas do you see?) then (1 or less Gas)
+            :Continue with normal build;
+            note left
+                Keep in mind, that he can still
+                add or proxy additional Barracks
+                and for example play proxy
+                Marauder or Marines.
+
+                In that case, there is no consistent
+                way of scouting it and your build order
+                and micro have to make up for it.
+            end note
+        else (2 Gas)
+            :Scout for proxies;
+            note right
+                :You play vs. some kind of one base aggression.
+                Potentially proxy Factory or proxy Reaper but 
+                might aswell be a 1/1/1.
+            end note
+        endif
+    endif
+else (no)
+    if (Is the Terran base fully walled off with Depots?) then (yes)
+        :This is highly inefficient from the Terran but you are definetily getting cheesed.;
+    else (no)
+        if (Is there any gas taken?) then (yes)
+            :You play vs. some kind of Gas based proxy (Reaper, Marauder, Factory).;
+        else (no)
+            :You play vs. proxy rax marines;
+            note right
+                This includes
+                Marines, SCVs
+                and Bunkers 
+                at ~2:30
+            end note
+        endif
+    endif
+    :Go Core first and expand but get a Shield Battery at your natural and
+    check with a probe from your main if you can find the proxy or enemy
+    units walking around.;
+endif
+if (Have you confirmed a proxy or one base play?) then (yes)
+    :Find out which one;
+    note right
+        You can find out by picking up on some clues:
+        - no Gas -> 3 Rax Marines
+        - Tech Lab -> 2 Rax Marauder
+        - no Tech Lab -> 3 Rax Reaper
+
+        Clues that may lead to a proxy Factory or 1/1/1 are:
+        - proxied Factory
+        - no attack by ~2:45 (besides a single reaper)
+        - Rax not producing units
+        - 2 Gas (Reapers also use 2 Gas)
+
+        Keep in mind, that Terran can also combine Factory
+        with Bio units, for example proxy Marauder into
+        proxy Factory -> Marauder Cyclone
+    end note
+    switch (Which one?)
+        case (Proxy or regular Factory)
+            :Defend like this:
+            - 3 Gates
+            - Robo, Stargate or Twilight
+            - 2 Base
+            - 1 Shield Battery at natural
+            - cut probes at 1,5 base saturation
+
+            I suggest 3 Gate Phoenix as this seems to deal quite
+            well with anything from 1 base factory / starport.;
+            note left
+                I am not exactly sure what to do in this case and
+                the explained response here is just a suggestion
+                that worked for me quite well in the past.
+
+                Keep in mind that its hard to determine what Terran
+                will do exactly but the most common builds will hit at:
+                - Marine Tank Liberator (~?:??)
+                - Reactor Cyclone (~3:15)
+                - Marauder Cyclone (~?:??)
+                - Widow Mine or Hellion Drop (~4:00)
+            end note
+        case (3 Rax Marines)
+            :Marines and SCVs hit at ~2:30
+
+            Defend like this:
+            - 1 Base
+            - 2 Gates
+            - Stalkers
+            - Shield Batteries;
+        case (2 Rax Marauder)
+            :First Marauder hits at ~2:30
+
+            Defend like this:
+            - 2 Gates
+            - 2 Base (but no Probes for 2nd Nexus)
+            - cut Probes at 1 base saturation
+            - 2 Shield Batteries;
+        case (3 Rax Reaper)
+            :First Reaper hits at ~2:30
+
+            Defend like this:
+            - 1 Shield Battery in each mineral line
+            - 2 Gates
+            - cut Probes at 1 base saturation;
+    endswitch
+else (no)
     :Shade forward first Adept to scout;
     if (Is there a second Command Center?) then (yes)
         :Continue with normal build;
@@ -27,37 +146,7 @@ if (Are there Buildings in the Terran's Base?) then (yes)
                 endif
             else (no)
             endif
-        repeatwhile (Repeat until units walk out or you have enough informations)
-    endif
-else (no)
-    if (Is there any gas taken?) then (yes)
-        :You play vs. some kind of Gas based proxy (Reaper, Marauder, Factory)
-        - check with a probe from your main if you can find the proxy, to verify what it is;
-        if (Is it proxy factory?) then (yes)
-            :You can go 3 Gate + Tech on one base to defend
-            I would suggest 3 Gate Phoenix as this seems to deal
-            quite well with anything from 1 base factory / starport.;
-            note left
-                I am not exactly sure what to do in this case and
-                the explained response here is just a suggestion
-                that worked for me quite well in the past.
-            end note
-        else (no)
-            :You play vs. proxy Reaper or Marauder
-            Defend like this:
-            - 1 Base
-            - 2 Gates
-            - Adepts
-            - Shield Batteries;
-        endif
-        :After defending, get a Nexus in your natural as usual;
-    else (no)
-        :You play vs. proxy rax (marines)
-        Defend like this:
-        - 1 Base
-        - 2 Gates
-        - Stalkers
-        - Shield Batteries;
+        repeat while (Repeat until units walk out or you have enough informations)
     endif
 endif
 :Send any "air" scout your build allows (Hallucinated Pheonix, Observer or Stargate unit);
@@ -114,7 +203,7 @@ else (no)
             if (Do you see a fusion core?) then (yes)
                 :You are facing a Battle Cruiser opening.
                 A Battle Cruiser will warpin in one of your mineral lines at ~5:30.
-
+                
                 Defend like this:
                 - 1 Shield Battery in every mineral line
                 - 5 Stalkers in every mineral line;
@@ -179,3 +268,5 @@ else (no)
         end note
     endif
 endif
+stop
+@enduml
